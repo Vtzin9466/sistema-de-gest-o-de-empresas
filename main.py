@@ -130,23 +130,20 @@ class SistemaEmpresa:
 
             if opcao == '1':
                 codigo = input('Codigo do produto: ')
-                codigointerno = input('Codigo interno: ')
                 descricao = input('Descricao=: ')
                 quantidade = int(input('Quantidade: '))
                 valor = float(input('Valor unitário: '))
-                produto = Produto(codigo, codigointerno, descricao, quantidade, valor)
+                produto = Produto(codigo, descricao, quantidade, valor)
                 empresa.estoque.adicionar_produto(produto)
                 print('Produto adicionado com sucesso!')
 
             elif opcao == '2':
                 codigo = input('Codigo do produto: ')
-                codigointerno = input('Codigo interno: ')
                 nova_qtd = int(input('Quantidade: '))
                 empresa.estoque.atualizar_quantidade(codigo, nova_qtd)
 
             elif opcao == '3':
                 codigo = input('Codigo do produto: ')
-                codigointerno = input('Codigo interno: ')
                 empresa.estoque.remover_produto(codigo)
                 print('Produto removido (se existir')
 
@@ -218,7 +215,7 @@ class SistemaEmpresa:
                 descricao = input('Descricao: ')
                 valor= float(input('Valor do bem: '))
                 data = input('Data de aquisição (dd/mm/aaa): ')
-                bem = BemPatrimonial(codigo, descricao, valor, data)
+                bem = bemPatrimonial(codigo, descricao, valor, data)
                 empresa.patrimonio.append(bem)
                 print('Bem patrimonial adicionado com sucesso!')
 
@@ -249,3 +246,4 @@ class SistemaEmpresa:
 if __name__ == '__main__':
     sistema = SistemaEmpresa()
     sistema.menu_principal()
+
