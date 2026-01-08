@@ -184,7 +184,7 @@ class SistemaEmpresa:
         except (ValueError, IndexError):
             print('Seleção Inválida!')
 
-    def gerenciarPatrimonio(self):
+    def gerenciar_patrimonio(self):
         if not self.empresas:
             print('Nenhuma empresa cadastrada ainda')
             return
